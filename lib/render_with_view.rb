@@ -1,3 +1,4 @@
+require 'render_with_view/version'
 require 'render_with_view/half_open_struct'
 
 module RenderWithView
