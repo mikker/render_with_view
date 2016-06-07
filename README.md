@@ -1,4 +1,4 @@
-# render_with_locals
+# render_with_view
 
 Be explicit about the things you send from your Rails controller to the view.
 
@@ -8,7 +8,7 @@ Be explicit about the things you send from your Rails controller to the view.
 
 ```ruby
 class ApplicationController
-  include RenderWithLocals
+  include RenderWithView
 end
 ```
 
@@ -17,7 +17,7 @@ end
 ```ruby
 class HomeController < ApplicationController
   def index
-    render_with_locals posts: Post.all
+    render_with_view posts: Post.all
   end
 end
 ```
@@ -42,17 +42,17 @@ An object with reader methods for every key in the hash you gave it. A [HalfOpen
 
 ## Installation
 
-Add `render_with_locals` to your Gemfile:
+Add `render_with_view` to your Gemfile:
 
 ```ruby
-gem 'render_with_locals'
+gem 'render_with_view'
 ```
 
 Include it in your `ApplicationController`:
 
 ```ruby
 class ApplicationController
-  include RenderWithLocals
+  include RenderWithView
 end
 ```
 

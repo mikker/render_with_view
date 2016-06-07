@@ -1,9 +1,9 @@
 require 'spec_helper'
-require 'render_with_locals/rspec_matcher'
+require 'render_with_view/rspec_matcher'
 
 RSpec.describe 'RSpec matcher' do
   let(:ctrl) { FakeController.new }
-  subject { ctrl.render_with_locals :index, thing: 1 }
+  subject { ctrl.render_with_view :index, thing: 1 }
 
   # short form
   it { should set_view_local :thing }

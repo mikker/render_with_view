@@ -1,8 +1,8 @@
 require 'rspec/core'
-require 'render_with_locals'
+require 'render_with_view'
 
 class FakeController
-  include RenderWithLocals
+  include RenderWithView
 
   attr_reader :calls
 

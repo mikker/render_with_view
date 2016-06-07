@@ -1,3 +1,3 @@
-module RenderWithLocals
+module RenderWithView
   VERSION = '0.1.0'
 end

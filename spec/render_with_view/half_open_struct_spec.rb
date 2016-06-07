@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module RenderWithLocals
+module RenderWithView
   RSpec.describe HalfOpenStruct do
     it "can be initialized with a hash, and values read and written" do
       s = HalfOpenStruct.new(name: "Joe")

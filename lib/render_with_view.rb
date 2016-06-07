@@ -1,11 +1,11 @@
-require 'render_with_locals/half_open_struct'
+require 'render_with_view/half_open_struct'
 
-module RenderWithLocals
+module RenderWithView
   class View < HalfOpenStruct; end
 
   def self.included kls
     kls.class_eval do
-      def render_with_locals *args
+      def render_with_view *args
         tmpl = args.length == 2 ? args.shift : action_name
         locals = args.shift
 

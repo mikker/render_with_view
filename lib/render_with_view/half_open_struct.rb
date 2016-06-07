@@ -1,4 +1,4 @@
-module RenderWithLocals
+module RenderWithView
   # Like OpenStruct but doesn't let you read a non-assigned value (raises
   # instead of returning nil). This avoids issues where you read the wrong
   # value due to a typo and don't notice.
