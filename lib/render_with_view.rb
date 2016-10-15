@@ -7,13 +7,18 @@ module RenderWithView
   def self.included kls
     kls.class_eval do
       def render_with_view *args
-        tmpl = args.length == 2 ? args.shift : action_name
+        if !args.first.is_a?(Hash)
+          tmpl = args.shift
+        else
+          tmpl = action_name
+        end
         locals = args.shift
+        opts = args.shift || {}
 
         # save to ivar for testing purposes
         @__view__ = View.new(locals)
 
-        render tmpl, locals: { view: @__view__ }
+        render tmpl, opts.merge(locals: { view: @__view__ })
       end
     end
   end

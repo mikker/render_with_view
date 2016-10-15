@@ -34,6 +34,17 @@ RSpec.describe RenderWithView do
       expect(ivar).to be_a RenderWithView::View
       expect(ivar.user).to eq user
     end
+
+    it "includes options" do
+      user = { id: 1 }
+      opts = { flash: {notice: "YAS!"} }
+      ctrl = FakeController.new
+
+      ctrl.render_with_view(:edit, {user: user}, opts)
+      tmpl, opts = ctrl.calls.last
+      expect(tmpl).to eq :edit
+      expect(opts[:flash]).to eq({notice: "YAS!"})
+    end
   end
 
 end
