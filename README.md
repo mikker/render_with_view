@@ -56,6 +56,17 @@ class ApplicationController
 end
 ```
 
+## Bonus RSpec matcher
+
+```ruby
+require 'render_with_view/rspec_matcher'
+
+describe ThingController do
+  subject { get :index }
+  it { should set_view_local :key, optional_value }
+end
+```
+
 # License
 
 MIT
