@@ -37,13 +37,13 @@ RSpec.describe RenderWithView do
 
     it "includes options" do
       user = { id: 1 }
-      opts = { flash: {notice: "YAS!"} }
+      opts = { status: 401 }
       ctrl = FakeController.new
 
       ctrl.render_with_view(:edit, {user: user}, opts)
       tmpl, opts = ctrl.calls.last
       expect(tmpl).to eq :edit
-      expect(opts[:flash]).to eq({notice: "YAS!"})
+      expect(opts[:status]).to eq(401)
     end
   end
 
