@@ -11,6 +11,9 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/mikker/render_with_view'
   s.license = 'MIT'
 
+  s.add_dependency 'rails'
+  s.add_development_dependency 'rspec'
+
   s.files = `git ls-files`.split("\n")
   s.require_path    = "lib"
 end
