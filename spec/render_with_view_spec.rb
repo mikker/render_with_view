@@ -11,7 +11,6 @@ RSpec.describe RenderWithView do
 
       tmpl, args = ctrl.calls.last
       expect(tmpl).to eq :index
-      expect(args[:locals][:view].user).to eq(user)
     end
 
     it "defaults to action_name template" do
