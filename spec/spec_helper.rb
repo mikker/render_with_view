@@ -1,5 +1,5 @@
-require 'rspec/core'
-require 'render_with_view'
+require "rspec/core"
+require "render_with_view"
 
 class FakeController
   def self.helper_method(*args)

@@ -1,12 +1,12 @@
-RSpec::Matchers.define :set_view_local do |key, expected = nil|
+RSpec::Matchers.define(:set_view_local) do |key, expected = nil|
   match do |block|
     block.call if block && block.is_a?(Proc)
 
-    value = assigns('__view__').send(key.to_sym) rescue nil
+    value = assigns("__view__").send(key.to_sym) rescue nil
 
     return !!value unless expected
 
-    expect(expected).to eq(value)
+    expect(expected).to(eq(value))
   end
 
   supports_block_expectations
